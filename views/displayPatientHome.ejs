@@ -1,0 +1,24 @@
+<% // create a list of javascript files to have the header load %>
+<% var js_include = ['create_patient.js']; %>
+<% include header %>
+
+
+<div id ="section">
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Patient</th><th><!-- Delete Column --></th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/patient/?patientid=<%= rs[i].PatientID %>"> <%= rs[i].FirstName %> <%= rs[i].LastName %></a></td>
+            <td><a href="/patient/delete?patientid=<%= rs[i].PatientID %>"> Delete</a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No Patients  are entered into the Patient database table.
+    <% } %>
+<br /><br/>
+    <a href="/patient/create">Insert a New Patient</a>
+</div>
+
+<% include footer %>

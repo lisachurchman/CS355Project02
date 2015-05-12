@@ -1,0 +1,8 @@
+<% if(rs.length > 0) { %>
+Medication: <%= rs[0][0].MedName %> <br />
+Doctor: <%= rs[0][0].DoctorFirst %> <%= rs[0][0].DoctorLast %><br />
+Patient: <%= rs[0][0].PatientFirst %> <%= rs[0][0].PatientLast %><br />
+<% } else { %>
+Prescription was not inserted. <br />
+Make sure there is a current doctor and patient selected!
+<% } %>

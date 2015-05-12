@@ -1,0 +1,25 @@
+<% // create a list of javascript files to have the header load %>
+<% var js_include = ['create_student.js']; %>
+<% include header %>
+
+
+<div id="section">
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Doctor</th><th><!-- Delete Column --></th><th><!-- Delete Column --></th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/doctor/?doctorid=<%= rs[i].DoctorID %>"> <%= rs[i].FirstName %> <%= rs[i].LastName %></a></td>
+            <td><a href="/doctor/delete?doctorid=<%= rs[i].DoctorID %>"> Delete</a></td>
+            <td><a href="/doctor/edit?doctorid=<%= rs[i].DoctorID %>"> Edit</a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No Doctors  are entered into the Doctor database table.
+    <% } %>
+<br /> <br/>
+    <a href="/doctor/create">Insert a New Doctor</a>
+</div>
+
+<% include footer %>

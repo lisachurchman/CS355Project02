@@ -1,0 +1,8 @@
+<% if(rs.length > 0) { %>
+
+Name: <%= rs[0].FirstName %> <%= rs[0].LastName %><br />
+Specialty: <%= rs[0].Specialty %> <br />
+<% } else { %>
+<%console.log(rs.length);%>
+No doctor matched this doctor id <%= doctorid %>.
+<% } %>

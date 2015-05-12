@@ -1,0 +1,6 @@
+<% console.log(rs) %>
+<% if(rs.length > 0) { %>
+Medication Name: <%= rs[0].MedicationName %><br />
+<% } else { %>
+No medication matched this medication id <%= medicationid %>.
+<% } %>

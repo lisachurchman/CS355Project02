@@ -1,0 +1,66 @@
+<% // create a list of javascript files to have the header load %>
+<% var js_include = ['edit_operation.js']; %>
+<% include header %>
+
+
+<div id ="section">
+    <!-- Note that this is a post -->
+    <form id="edit_operation_form" action="<%= action %>">
+        <input type="hidden" name="operationid" id="operationid" value="<%=op[0].OperationID%>" />
+        <label for="doctor">Doctor </label>
+        <select id="doctor" name="doctor">
+            <% for (var i=0; rsDoctor.length > i; i++) { %>
+            <% if (op[0].DoctorID == rsDoctor[i].DoctorID) {%>
+            <option value="<%= rsDoctor[i].DoctorID%>" selected>
+                <%= rsDoctor[i].FirstName %> <%= rsDoctor[i].LastName %>
+            </option>
+            <%} else {%>
+            <option value="<%= rsDoctor[i].DoctorID%>">
+                <%= rsDoctor[i].FirstName %> <%= rsDoctor[i].LastName %>
+            </option>
+
+            <% } }%>
+        </select><br />
+
+
+        <label for="patient">Patient </label>
+        <select id="patient" name="patient">
+            <% for (var i=0; rsPatient.length > i; i++) { %>
+            <% if (op[0].PatientID == rsPatient[i].PatientID){%>
+            <option value="<%= rsPatient[i].PatientID %>" selected>
+                <%= rsPatient[i].FirstName %> <%= rsPatient[i].LastName %>
+            </option>
+            <%} else {%>
+            <option value="<%= rsPatient[i].PatientID %>">
+                <%= rsPatient[i].FirstName %> <%= rsPatient[i].LastName %>
+            </option>
+            <% }} %>
+        </select><br />
+
+        <tr><td>Date (mm/dd/yyy):</td>
+            <td><input type="text" id="date" name="date" value="<%=op[0].Date%>"/></td>
+        </tr>
+        <br />
+        <tr><td>Time (00:00):</td>
+            <td><input type="text" id="time" name="time" value="<%=op[0].Time%>" /></td>
+        </tr>
+        <br />
+        <%var description = (op[0].Description == null) ? '' : op[0].Description; %>
+        <%console.log(description);%>
+        <tr><td>Description:</td>
+            <td><textarea id="description" name="description"> <%=description%></textarea> </td>
+        </tr>
+        <br />
+
+
+
+
+        <!-- not that we use a button here and not submit -->
+        <input type="button" id="editOperationBtn" value="Update" />
+    </form>
+
+    <div id="output" style="margin:10px;display:none"></div>
+
+</div>
+
+<% include footer %>

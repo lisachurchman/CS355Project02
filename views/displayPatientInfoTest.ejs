@@ -1,0 +1,23 @@
+<% include header %>
+
+<div id ="section">
+    <% if(rs.length > 0) { %>
+    <%console.log(rs)%>
+    <b>Name: </b><%= rs[0].PatientFirst %> <%= rs[0].PatientLast %> <br />
+    <b>Emergency Contact Information</b> <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Name: <%= rs[0].EFirst %> <%= rs[0].ELast %> <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Relationship: <%=rs[0].Relationship %> <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Number: <%=rs[0].PhoneNumber%> <br />
+    <b>Current Medications Being Taken:</b>
+    <% for (var i=0; rs.length > i; i++) { %>
+        <br />&nbsp;&nbsp;&nbsp;&nbsp;<%=rs[i].MedicationName%>
+
+    <%}%>
+
+
+    <% } else { %>
+    No Patient matched this patient id <%= patientid %>.
+    <% } %>
+</div>
+
+<% include footer %>

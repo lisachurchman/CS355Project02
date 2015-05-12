@@ -1,0 +1,78 @@
+table.login {
+    border:none;
+}
+
+#footer {
+    margin-top:20px;
+    background-color:white;
+    color:black;
+    clear:both;
+    text-align:right;
+    padding:5px;
+    vertical-align: inherit;
+
+}
+
+#header {
+    /*margin-bottom:20px;*/
+    background-color:cornflowerblue;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#content{
+    min-height: 300px;
+    height: auto;
+}
+
+#nav {
+    line-height:30px;
+    background-color:#ffffff;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;
+}
+
+.menu {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    width: 100px;
+    height: 25px;
+    text-align: center;
+    color: cornflowerblue;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background: white;
+    border: solid 1px #666666;
+    text-decoration:none;
+}
+
+.menu a:hover {
+    color: white;
+    background: cornflowerblue;
+    text-decoration:underline;
+}
+
+#section {
+    width:350px;
+    float:left;
+    padding:20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+

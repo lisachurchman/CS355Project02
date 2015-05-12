@@ -1,0 +1,11 @@
+<% include header %>
+
+<div id ="section">
+    <% if(rs.length > 0) { %>
+    Name: <%= rs[0].FirstName %> <%= rs[0].LastName %> <br />
+    Specialty: <%= rs[0].Specialty %> <br />
+    <% } else { %>
+    No Doctor matched this doctor id <%= doctorid %>.
+    <% } %>
+</div>
+<% include footer %>

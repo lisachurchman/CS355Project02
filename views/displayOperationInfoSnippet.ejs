@@ -1,0 +1,10 @@
+<% if(rs.length > 0) { %>
+Doctor: <%= rs[0].DoctorFirst %> <%= rs[0].DoctorLast %><br />
+Patient: <%= rs[0].PatientFirst %> <%= rs[0].PatientLast %><br />
+Date: <%= rs[0].Date %> <br />
+Time: <%= rs[0].Time %> <br />
+Description: <%= rs[0].Description %> <br />
+<% } else { %>
+Operation was not inserted. <br />
+Make sure there is a current doctor and patient selected!
+<% } %>

@@ -1,0 +1,33 @@
+<%include header%>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        h2 {
+            color: black;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Welcome</h2>
+        <%if (rs[0].TotalPatients == 1) {%>
+            <p>There is currently <%=rs[0].TotalPatients%> patient registered in Hospital Name!</p>
+        <%} else {%>
+            <p>There are currently <%=rs[0].TotalPatients%> patients registered in Hospital Name!</p>
+        <%}%>
+<p>
+    <img style="height:auto; width:auto; max-width:400px; max-height:400px;" src="Hospital.jpeg">
+
+</p>
+
+
+</body>
+</html>
+<%include footer%>

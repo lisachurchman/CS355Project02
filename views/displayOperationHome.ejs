@@ -1,0 +1,29 @@
+<% // create a list of javascript files to have the header load %>
+<% var js_include = ['create_operation.js']; %>
+<% include header %>
+
+
+<div id="section">
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Doctor</th><th>Patient</th><th>Date</th><th>Time</th><th>Description</th><th><!-- Delete Column --></th><th><!-- Edit Column --></th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td> <%= rs[i].DoctorFirst %> <%= rs[i].DoctorLast %></td>
+            <td> <%= rs[i].PatientFirst %> <%= rs[i].PatientLast %></td>
+            <td> <%= rs[i].Date %> </td>
+            <td> <%= rs[i].Time %></td>
+            <td> <%= rs[i].Description %></td>
+            <td><a href="/operation/delete?operationid=<%= rs[i].OperationID %>"> Delete</a></td>
+            <td><a href="/operation/edit?operationid=<%= rs[i].OperationID %>"> Edit</a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No operations  are entered into the Operation database table.
+    <% } %>
+    <br /> <br/>
+    <a href="/operation/create">Insert a New operation</a>
+</div>
+
+<% include footer %>

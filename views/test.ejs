@@ -1,0 +1,45 @@
+<% // create a list of javascript files to have the header load %>
+<% var js_include = ['create_prescription.js']; %>
+<% include header %>
+<div id ="section">
+<a href="/medication/create">Insert a New Medication</a><br/><br/>
+<!-- Note that this is a post -->
+<form id="create_prescription_form" action="<%= action %>">
+    <table id="login">
+        <label for="medication">Medication Name </label>
+        <select id="medication" name="medication">
+            <% for (var i=0; rsMedication.length > i; i++) { %>
+            <option value="<%= rsMedication[i].MedicationID %>">
+                <%= rsMedication[i].MedicationName %>
+            </option>
+            <% } %>
+        </select><br />
+
+        <label for="doctor">Doctor </label>
+        <select id="doctor" name="doctor">
+            <% for (var i=0; rsDoctor.length > i; i++) { %>
+            <option value="<%= rsDoctor[i].DoctorID %>">
+                <%= rsDoctor[i].FirstName %> <%= rsDoctor[i].LastName %>
+            </option>
+            <% } %>
+        </select><br />
+
+        <label for="patient">Patient </label>
+        <select id="patient" name="patient">
+            <% for (var i=0; rsPatient.length > i; i++) { %>
+            <option value="<%= rsPatient[i].PatientID %>">
+                <%= rsPatient[i].FirstName %> <%= rsPatient[i].LastName %>
+            </option>
+            <% } %>
+        </select><br />
+    </table>
+
+    <!-- not that we use a button here and not submit -->
+    <input type="button" id="createPrescriptionBtn" value="Insert" />
+</form>
+
+<div id="output" style="margin:10px;display:none"></div>
+
+    </div>
+
+<% include footer %>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <title>Hospital Name</title>
+    <link href="/style.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="/jquery-1.11.2.min.js"></script>
+
+    <% if(typeof js_include !== 'undefined') {
+        for(var i = 0; i < js_include.length; i++) { %>
+            <script type="text/javascript" src="/<%= js_include[i] %>"></script>
+    <%  }
+       }
+    %>
+</head>
+    <body>
+        <% // single lin comment */ %>
+        <% /* block
+              comments
+            */ %>
+        <div id="header">
+        <h1><%= locals.settings.subtitle %> </h1>
+        </div>
+
+        <div id="nav">
+            <ul class = "menu">
+            <a href="/about">About</a> <br />
+            <a href="/patient/home">Patient</a> <br />
+            <a href="/doctor/home">Doctor</a> <br />
+            <a href="/medication/home">Medication</a> <br />
+            <a href="/operation/home">Operation</a>
+            </ul>
+        </div>
+
+  <div id="content">

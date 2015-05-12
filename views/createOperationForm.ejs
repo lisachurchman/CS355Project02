@@ -1,0 +1,52 @@
+<% // create a list of javascript files to have the header load %>
+<% var js_include = ['create_operation.js']; %>
+<% include header %>
+
+
+<div id ="section">
+
+    <!-- Note that this is a post -->
+    <form id="create_operation_form" action="<%= action %>">
+        <table id="login">
+
+        <label for="doctor">Doctor </label>
+        <select id="doctor" name="doctor">
+            <% for (var i=0; rsDoctor.length > i; i++) { %>
+            <option value="<%= rsDoctor[i].DoctorID %>">
+                <%= rsDoctor[i].FirstName %> <%= rsDoctor[i].LastName %>
+            </option>
+            <% } %>
+        </select><br /> <br />
+
+        <label for="patient">Patient </label>
+        <select id="patient" name="patient">
+            <% for (var i=0; rsPatient.length > i; i++) { %>
+            <option value="<%= rsPatient[i].PatientID %>">
+                <%= rsPatient[i].FirstName %> <%= rsPatient[i].LastName %>
+            </option>
+            <% } %>
+        </select>
+
+        <tr><td>Date (mm/dd/yyy):</td>
+            <td><input type="text" id="date" name="date" /></td>
+        </tr>
+        <br />
+        <tr><td>Time (00:00):</td>
+            <td><input type="text" id="time" name="time" /></td>
+        </tr>
+        <br />
+        <tr><td>Description:</td>
+            <td><textarea id="description" name="description"></textarea></td>
+        </tr>
+
+</table>
+<br />
+        <!-- not that we use a button here and not submit -->
+        <input type="button" id="createOperationBtn" value="Insert" />
+    </form>
+
+    <div id="output" style="margin:10px;display:none"></div>
+
+</div>
+
+<% include footer %>

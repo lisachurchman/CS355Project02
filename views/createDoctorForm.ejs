@@ -1,0 +1,29 @@
+<% // create a list of javascript files to have the header load %>
+<% var js_include = ['create_doctor.js']; %>
+<% include header %>
+
+<div id ="section">
+<!-- Note that this is a post -->
+<form id="create_doctor_form" action="<%= action %>">
+    <table id="login">
+        <tr><td>First Name:</td>
+            <td><input type="text" id="fname" name="fname" /></td>
+        </tr>
+        <tr><td>Last Name:</td>
+            <td><input type="text" id="lname" name="lname" /></td>
+        </tr>
+        <tr><td>Specialty:</td>
+            <td><input type="text" id="specialty" name="specialty" /></td>
+        </tr>
+
+    </table>
+    <!-- not that we use a button here and not submit -->
+    <input type="button" id="createDoctorBtn" value="Insert" />
+</form>
+
+
+<div id="output" style="margin:10px;display:none"></div>
+
+ </div>
+
+<% include footer %>

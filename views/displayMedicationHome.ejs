@@ -1,0 +1,24 @@
+<% // create a list of javascript files to have the header load %>
+<% var js_include = ['create_medication.js']; %>
+<% include header %>
+
+
+<div id="section">
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Medication</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/medication/?medicationid=<%= rs[i].MedicationID %>"> <%= rs[i].MedicationName %></a></td>
+
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No medications  are entered into the Medications database table.
+    <% } %>
+    <br /> <br/>
+    <a href="/medication/create">Insert a New Medication</a>
+</div>
+
+<% include footer %>

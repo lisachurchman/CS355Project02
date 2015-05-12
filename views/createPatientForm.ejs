@@ -1,0 +1,48 @@
+<% // create a list of javascript files to have the header load %>
+<% var js_include = ['create_patient.js']; %>
+<% include header %>
+
+<div id ="section">
+<!-- Note that this is a post -->
+<form id="create_patient_form" action="<%= action %>">
+    <table id="login">
+        <tr><td>Patient First Name:</td>
+            <td><input type="text" id="fname" name="fname" /></td>
+        </tr>
+        <tr>
+            <td>Patient Last Name:</td>
+            <td><input type="text" id="lname" name="lname" /></td>
+        </tr>
+        <tr> <td>Sex: </td>
+            <td><input type="text" id="sex" name="sex" /></td>
+        </tr>
+        <tr><td>SSN:</td>
+            <td><input type="text" id="SSN" name="SSN" maxlength="3" /></td>
+            <!--<td>SSN:</td>-->
+            <td><input type="text" id="SSN2" name="SSN2" maxlength="2" /></td>
+            <!--<td>SSN:</td>-->
+            <td><input type="text" id="SSN3" name="SSN3" maxlength="4"/></td>
+        </tr>
+        <tr><td>Emergency Contact First Name:</td>
+            <td><input type="text" id="efirst" name="elast" /></td>
+            <!--</tr>-->
+            <!--<tr>-->
+            <td>Emergency Contact Last Name:</td>
+            <td><input type="text" id="elast" name="elast" /></td>
+        </tr>
+        <tr><td>Emergency Contact Relationship:</td>
+            <td><input type="text" id="relationship" name="relationship" /></td>
+            <!--</tr>-->
+            <!--<tr>-->
+            <td>Emergency Contact Phone Number:</td>
+            <td><input type="text" id="phonenumber" name="phonenumber" /></td>
+        </tr>
+
+    </table>
+    <!-- not that we use a button here and not submit -->
+    <input type="button" id="createPatientBtn" value="Insert" />
+</form>
+
+<div id="output" style="margin:10px;display:none"></div>
+</div>
+<% include footer %>
